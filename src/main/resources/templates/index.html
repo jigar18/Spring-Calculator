@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
+        <title>Calculator</title>
+    </head>
+    <body>
+        <div align="center">
+            <h1>Calculator</h1>
+            <p>Welcome to 21st century fancy calculator</p><br /><br />
+            <form action="#" th:action="@{/calculate}" th:object="${calculator}" method="post">
+                <table class="table table-striped padding">
+                    <tr>
+                        <td>Value 01:</td>
+                        <td><label><input type="number" th:field="*{value01}" /></label></td>
+                    </tr>
+                    <tr>
+                        <td>Value 02:</td>
+                        <td><label><input type="number" th:field="*{value02}" /></label></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>
