@@ -1,15 +1,29 @@
 package com.training.springcalculator.domain;
 
+import javax.persistence.Entity;
+
+//@Entity
 public class Calculator {
 
-    private double value01;
-    private double value02;
+    private double leftOperand;
+    private double rightOperand;
+    private String operand;
 
-    public double getValue01() { return value01; }
+    public Calculator() {
+        leftOperand = 0;
+        rightOperand = 0;
+        operand = "+";
+    }
 
-    public void setValue01(double value01) { this.value01 = value01; }
+    public double getLeftOperand() { return leftOperand; }
 
-    public double getValue02() { return value02; }
+    public void setLeftOperand(double leftOperand) { this.leftOperand = leftOperand; }
 
-    public void setValue02(double value02) { this.value02 = value02; }
+    public double getRightOperand() { return rightOperand; }
+
+    public void setRightOperand(double rightOperand) { this.rightOperand = rightOperand; }
+
+    public String getOperand() { return operand; }
+
+    public void setOperand(String operand) { this.operand = operand; }
 }
