@@ -11,17 +11,26 @@
             <p>Welcome to 21st century fancy calculator</p><br /><br />
             <form action="#" th:action="@{/calculate}" th:object="${calculator}" method="post">
                 <table class="table table-striped padding">
-                    <tr>
-                        <td>Value 01:</td>
-                        <td><label><input type="number" th:field="*{value01}" /></label></td>
-                    </tr>
-                    <tr>
-                        <td>Value 02:</td>
-                        <td><label><input type="number" th:field="*{value02}" /></label></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Values</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Value 01:</td>
+                            <td><label><input type="number" th:field="*{value01}" /></label></td>
+                        </tr>
+                        <tr>
+                            <td>Value 02:</td>
+                            <td><label><input type="number" th:field="*{value02}" /></label></td>
+                        </tr>
+                        <tr>
+                            <td><button class="btn btn-info" type="button" th:onclick="'window.location.href=\'/calculations/'">Calculate</button></td>
+                            <td><button class="btn btn-info" type="button" th:onclick="'window.location.href=\'/'">Reset</button></td>
+                        </tr>
+                    </tbody>
                 </table>
             </form>
         </div>
