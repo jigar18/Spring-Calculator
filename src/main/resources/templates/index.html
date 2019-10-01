@@ -9,7 +9,6 @@
         <div align="center">
             <h1>Calculator</h1>
             <p>Welcome to 21st century fancy calculator</p><br /><br />
-            <form action="#" th:action="@{/calculate}" th:object="${calculator}" method="post">
                 <table class="table table-striped padding">
                     <thead>
                         <tr>
@@ -18,13 +17,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Value 01:</td>
-                            <td><label><input type="number" th:field="*{value01}" /></label></td>
+                        <tr th:each="calculate : ${calculator}">
+                            <td class="row">Value 01:</td>
+                            <td class="row" th:text="${calculate.leftOperand}"><label><input type="number" th:field="*{leftOperand}" /></label></td>
                         </tr>
                         <tr>
-                            <td>Value 02:</td>
-                            <td><label><input type="number" th:field="*{value02}" /></label></td>
+                            <td class="row">Value 02:</td>
+                            <td class="row" th:text="${calculate.rightOperand}"><label><input type="number" th:field="*{rightOperand}" /></label></td>
+                        </tr>
+                        <tr>
+                            <td class="row">Operator:</td>
+                            <td class="row" th:text="${calculate.operator}"><input type="radio" name="operator" value="add" />Addition<br />
+                                <input type="radio" name="operator" value="sub" />Subtraction<br />
+                                <input type="radio" name="operator" value="mul" />Multiply<br />
+                                <input type="radio" name="operator" value="div" />Division<br /></td>
                         </tr>
                         <tr>
                             <td><button class="btn btn-info" type="button" th:onclick="'window.location.href=\'/calculations/'">Calculate</button></td>
@@ -32,7 +38,6 @@
                         </tr>
                     </tbody>
                 </table>
-            </form>
         </div>
     </body>
 </html>
